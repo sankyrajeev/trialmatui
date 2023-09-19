@@ -12,10 +12,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import MyVerticallyCenteredModal from './MyVerticallyCenteredModal';
 
+import { Link } from 'react-router-dom';
+import Home from '../pages/Home';
+
+
+
+
 export default function Header() {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const [modalShow, setModalShow] = useState(false);
   const [modalShow2, setModalShow2] = useState(false);
 
@@ -26,7 +32,7 @@ export default function Header() {
   const handleContactClick2 = () => {
     setOpen(false);
     setModalShow2(true);
-    
+
   };
 
 
@@ -39,6 +45,7 @@ export default function Header() {
   };
 
   return (
+
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed">
@@ -50,12 +57,16 @@ export default function Header() {
           {/* Show options for large screens */}
           {!isSmallScreen && (
             <div className="flex space-x-10" style={{ color: '#FFFFFF' }}>
-              <a href="#" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>Home</a>
-              <a href="#About" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>About</a>
+              <Link to='/' className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>Home</Link>
+              <Link to='/about' className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>About</Link>
 
-              <a href="#" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>Blog</a>
-              <a href="#" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>Portfolio</a>
-              <a href="#" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }} onClick={handleContactClick}>Contact</a>
+              <Link to="/blog" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>
+                Blog
+              </Link>
+              <Link to="/portfolio" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>
+                Portfolio
+              </Link>
+              <Link className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }} onClick={handleContactClick}>Contact</Link>
               <MyVerticallyCenteredModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -96,12 +107,12 @@ export default function Header() {
         </div>
         <div className="w-64 h-full bg-white">
           <ul className="list-none p-4 space-y-2">
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold" sx={{ fontFamily: 'Croissant One' }} onClick={handleDrawerClose}>Home</a></li>
-            <li><a href="#About" className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>About</a></li>
+            <li><Link to="/" className="text-black hover:text-lg hover:font-bold" sx={{ fontFamily: 'Croissant One' }} onClick={handleDrawerClose}>Home</Link></li>
+            <li><Link to="/about" className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>About</Link></li>
 
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>Blog</a></li>
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>Portfolio</a></li>
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold" onClick={handleContactClick2} >Contact</a></li>
+            <li><Link to='/blog' className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>Blog</Link></li>
+            <li><Link to="/portfolio" className="text-black hover:text-lg hover:font-bold" onClick={handleDrawerClose}>Portfolio</Link></li>
+            <li><Link  className="text-black hover:text-lg hover:font-bold" onClick={handleContactClick2} >Contact</Link></li>
             <MyVerticallyCenteredModal
               show={modalShow2}
               onHide={() => setModalShow2(false)}
@@ -111,5 +122,7 @@ export default function Header() {
       </Drawer>
 
     </Box>
+
+
   );
 }
