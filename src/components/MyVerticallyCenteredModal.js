@@ -4,8 +4,13 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import emailjs from 'emailjs-com';
 
+import '../App.css'
+
 const MyVerticallyCenteredModal = (props) => {
     const [emailSent, setEmailSent] = useState(false);
+    
+
+    
 
     const sendEmail = (e) => {
         e.preventDefault();
@@ -43,22 +48,31 @@ const MyVerticallyCenteredModal = (props) => {
                                     Contact Me!
                                 </Modal.Title>
                             </Modal.Header>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                            <Form.Group className="mb-3 mt-3" controlId="exampleForm.ControlInput1">
                                 <Form.Label>Email address</Form.Label>
-                                <Form.Control type="email" placeholder="johndoe@example.com" name="user_email" />
+                                <Form.Control type="email" placeholder="johndoe@example.com" name="user_email" required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" placeholder="John Doe" name="user_name" />
+                                <Form.Control type="text" placeholder="John Doe" name="user_name" required />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Send your message!</Form.Label>
-                                <Form.Control as="textarea" rows={3} placeholder="Type your message here!" name="message" />
+                                <Form.Control as="textarea" rows={3} placeholder="Type your message here!" name="message" required />
                             </Form.Group>
 
-                            <Button type="submit">Send</Button>
+                            <Button
+                                type="submit"
+                                variant="dark"
+                                className="send_btn"
+                                style={{ color: 'black' }}
+                                onMouseOver={(e) => e.currentTarget.style.color = 'white'}
+                                onMouseOut={(e) => e.currentTarget.style.color = 'black'}
+                            >
+                                Send
+                            </Button>
                         </form>
                     )}
                 </Modal.Body>

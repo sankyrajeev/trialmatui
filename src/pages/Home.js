@@ -24,7 +24,7 @@ const Home = () => {
       setIsVisible(true);
     }
 
-    if (position > 600) { // Adjust this value based on where your "About Me" section is
+    if (position > 400) { // Adjust this value based on where your "About Me" section is
       setIsAboutVisible(true);
     }
   };
@@ -65,7 +65,7 @@ const Home = () => {
 
       {/* About Me Section */}
       <div
-        className="bg-cover bg-center  h-screen flex items-center justify-center"
+        className="bg-cover bg-center  h-screen flex items-center justify-center" id="About"
         style={{ backgroundImage: `url('/assets/rm222batch5-mind-10.jpg')` }}
       >
         <Container maxWidth="md">
@@ -122,17 +122,37 @@ const Home = () => {
         </Container>
       </div>
 
-      <Image
-        src="./assets/background-picture-1.jpeg"
-        alt="Background"
-        className="w-full h-auto max-h-[350px]"
-        style={{
-          filter: 'grayscale(100%)',
-        }}
-        sx={{
-          objectFit: 'contain',
-        }}
-      />
+      <div style={{ position: 'relative' }}>
+        <Image
+          src="./assets/background-picture-1.jpeg"
+          alt="Background"
+          className="w-full h-auto max-h-[450px]"
+          style={{
+            filter: 'grayscale(100%)',
+          }}
+          sx={{
+            objectFit: 'contain',
+          }}
+        />
+        <p className="responsive-text"
+          style={{
+            position: 'absolute',
+            display:'flex',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            fontFamily: 'poppins',
+            color:"white",
+            
+            padding: '10px',
+            borderRadius: '5px',
+            maxWidth: '80%', /* Limit the width of the text */
+          }}
+        >
+          "Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill
+        </p>
+      </div>
+
     </div>
   );
 };
