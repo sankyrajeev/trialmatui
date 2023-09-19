@@ -1,11 +1,16 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './public/index.html',
-    './src/**/*.{html,js}',
-  ],
+  purge: {
+    content: [
+      './public/index.html',
+      './src/**/*.{js,jsx,ts,tsx}',
+    ],
+  },
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }

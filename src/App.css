@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* CSS Edits */
+.name-home{
+  font-family:'Gill Sans';
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+.icon-hover:hover {
+  border: 0.001px solid #e5e7eb; /* Change the color and border width as needed */
+  border-radius: 50%; /* If you want rounded borders for circular icons */
+}

@@ -29,17 +29,20 @@ export default function Header() {
       <CssBaseline />
       <AppBar position="fixed">
         <Toolbar style={{background:'#333333'}}>
-          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div" style={{color:'#FFFFFF'}}>
+          <Typography variant="h6" noWrap sx={{ flexGrow: 1 }} component="div" style={{color:'#FFFFFF',fontFamily: 'Croissant One' }} >
             Sankarsh Rajeev
           </Typography>
 
           {/* Show options for large screens */}
           {!isSmallScreen && (
             <div className="flex space-x-10" style={{color:'#FFFFFF'}}>
-              <a href="#" className="text-white hover:text-lg hover:font-bold">Home</a>
-              <a href="#" className="text-white hover:text-lg hover:font-bold">Portfolio</a>
-              <a href="#" className="text-white hover:text-lg hover:font-bold">Blog</a>
-              <a href="#" className="text-white hover:text-lg hover:font-bold">About</a>
+              <a href="#" className="text-white hover:text-lg hover:font-bold" style={{ fontFamily: 'Croissant One' }}>Home</a>
+              <a href="#" className="text-white hover:text-lg hover:font-bold"  style={{ fontFamily: 'Croissant One' }}>About</a>
+             
+              <a href="#" className="text-white hover:text-lg hover:font-bold"  style={{ fontFamily: 'Croissant One' }}>Blog</a>
+              <a href="#" className="text-white hover:text-lg hover:font-bold"  style={{ fontFamily: 'Croissant One' }}>Portfolio</a>
+              <a href="#" className="text-white hover:text-lg hover:font-bold"  style={{ fontFamily: 'Croissant One' }}>Contact</a>
+             
             </div>
           )}
 
@@ -75,10 +78,13 @@ export default function Header() {
         </div>
         <div className="w-64 h-full bg-white">
           <ul className="list-none p-4 space-y-2">
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Home</a></li>
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Portfolio</a></li>
-            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Blog</a></li>
+            <li><a href="#" className="text-black hover:text-lg hover:font-bold" sx={{ fontFamily: 'Croissant One' }}>Home</a></li>
             <li><a href="#" className="text-black hover:text-lg hover:font-bold">About</a></li>
+           
+            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Blog</a></li>
+            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Portfolio</a></li>
+            <li><a href="#" className="text-black hover:text-lg hover:font-bold">Contact</a></li>
+            
           </ul>
         </div>
       </Drawer>
