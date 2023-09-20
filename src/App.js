@@ -10,6 +10,7 @@ import About from './pages/About';
 import Ev_blog from './blogs/Ev_blog';
 import Ai_blog from './blogs/ai_blog';
 import StartupGrowth from './blogs/StartupGrowth';
+import Portfolio from './pages/Portfolio';
 
 
 function App() {
@@ -22,6 +23,10 @@ function App() {
           <Route
             path='/'
             element={<Home />}
+          />
+          <Route
+            path='/portfolio'
+            element={<Portfolio />}
           />
 
           <Route

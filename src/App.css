@@ -86,3 +86,68 @@
     padding: 3px;
   }
 }
+
+
+/* Add this to your existing stylesheets */
+.cards-container {
+  display: flex;
+  border-radius: 6px;
+  color: #333;
+  background: #eee;
+  padding: 1rem;
+  box-shadow: 0 0 1rem #000 inset;
+  overflow-x: auto;
+  position: relative;
+}
+
+.card {
+  flex: 1 0 250px;
+  box-shadow: 0 1px 1rem -4px #000;
+  background: #fff;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.card img {
+  width: 250px;
+  height: 250px;
+  object-fit: center;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* More styles here... */
+.card img {
+  width: 250px; /* Fixed width */
+  height: 250px; /* Fixed height */
+  object-fit: cover; /* Adjusts image size to cover the element box */
+}
+
+.card {
+  flex: 1 0 250px;  /* flex-basis set to 250px */
+  max-width: 250px; /* Maximum width */
+  min-height: 350px; /* Minimum height */
+  max-height: 350px; /* Maximum height */
+  box-shadow: 0 1px 1rem -4px #000;
+  background: #fff;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.card img {
+  width: 100%;  /* Full width */
+  height: 250px;  /* Fixed height */
+  object-fit: cover;  /* Keeps aspect ratio and covers the div */
+}
+
+.card-content {
+  padding: 1rem;
+}
