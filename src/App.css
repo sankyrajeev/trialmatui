@@ -91,18 +91,18 @@
 /* Add this to your existing stylesheets */
 .cards-container {
   display: flex;
-  border-radius: 6px;
-  color: #333;
-  background: #eee;
+  border-radius: 2px;
+  
+ 
   padding: 1rem;
-  box-shadow: 0 0 1rem #000 inset;
+ 
   overflow-x: auto;
   position: relative;
 }
 
 .card {
   flex: 1 0 250px;
-  box-shadow: 0 1px 1rem -4px #000;
+  box-shadow: 0 0.1px 1px -4px;
   background: #fff;
   margin: 1rem;
   overflow: hidden;
